@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8B29EC4-A7AA-4B7A-B367-ECDE7771FAE0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Tetris</RootNamespace>
+    <AssemblyName>Tetris</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Win32.Registry">
+      <Version>4.7.0</Version>
+    </PackageReference>
+    <PackageReference Include="NAudio">
+      <Version>2.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Security.AccessControl">
+      <Version>4.7.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Security.Principal.Windows">
+      <Version>4.7.0</Version>
+    </PackageReference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Button_WOC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Entities\ActionGame.cs" />
+    <Compile Include="Entities\BackEnd\BackBoardGame.cs" />
+    <Compile Include="Entities\DataBase\Connection.cs" />
+    <Compile Include="Entities\DataBase\ScoreBoardItems.cs" />
+    <Compile Include="Entities\ElementColor.cs" />
+    <Compile Include="Entities\Enums\ElementID.cs" />
+    <Compile Include="Entities\Enums\MachineStateName.cs" />
+    <Compile Include="Entities\Enums\MovementName.cs" />
+    <Compile Include="Entities\Enums\PieceOrientationName.cs" />
+    <Compile Include="Entities\Enums\ScoreBoardCommand.cs" />
+    <Compile Include="Entities\FrontEnd\FrontBoardGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entities\DataBase\InterfaceDBandGame.cs" />
+    <Compile Include="Entities\Piece.cs" />
+    <Compile Include="Entities\Position.cs" />
+    <Compile Include="Forms\formHighScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formHighScore.Designer.cs">
+      <DependentUpon>formHighScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formCongratulation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formCongratulation.Designer.cs">
+      <DependentUpon>formCongratulation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formGameOver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formGameOver.Designer.cs">
+      <DependentUpon>formGameOver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formLeaderBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formLeaderBoard.Designer.cs">
+      <DependentUpon>formLeaderBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formLevelUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formLevelUp.Designer.cs">
+      <DependentUpon>formLevelUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formOption.Designer.cs">
+      <DependentUpon>formOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formPlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formPlay.Designer.cs">
+      <DependentUpon>formPlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formMainMenu.Designer.cs">
+      <DependentUpon>formMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formSignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formSignIn.Designer.cs">
+      <DependentUpon>formSignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formSignUp.Designer.cs">
+      <DependentUpon>formSignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\formCongratulation.resx">
+      <DependentUpon>formCongratulation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formGameOver.resx">
+      <DependentUpon>formGameOver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formHighScore.resx">
+      <DependentUpon>formHighScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formLeaderBoard.resx">
+      <DependentUpon>formLeaderBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formLevelUp.resx">
+      <DependentUpon>formLevelUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formOption.resx">
+      <DependentUpon>formOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formPlay.resx">
+      <DependentUpon>formPlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formMainMenu.resx">
+      <DependentUpon>formMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formSignIn.resx">
+      <DependentUpon>formSignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formSignUp.resx">
+      <DependentUpon>formSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\DataSources\Tetris.Entities.DataBase.ScoreBoardItems.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\robyn-domanico-example-galaxy-bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Removal-769.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image-asset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tetris.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\se_game_offset1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peakpx %2816%29.jpg" />
+    <None Include="Resources\Picture10.png" />
+    <None Include="Resources\Picture9.png" />
+    <None Include="Resources\Picture8.png" />
+    <None Include="Resources\Picture6.png" />
+    <None Include="Resources\Picture5.jpg" />
+    <None Include="Resources\Picture4.jpg" />
+    <None Include="Resources\Picture3.jpg" />
+    <None Include="Resources\Picture2.jpg" />
+    <None Include="Resources\peakpx %281%29.jpg" />
+    <None Include="Resources\Picture1.jpg" />
+    <None Include="Resources\Speaker_Icon.png" />
+    <None Include="Resources\peakpx.jpg" />
+    <None Include="Resources\Removal-803.png" />
+    <None Include="Resources\[removal.ai]_efdb379e-eb37-47b0-9183-3b444343eed2-image.png" />
+    <None Include="Resources\[removal.ai]_71a71dd6-c482-4c84-9a08-80f2d97807f5-image.png" />
+    <None Include="Resources\Picture2.png" />
+    <None Include="Resources\Picture1.png" />
+    <None Include="Resources\wallpaperflare.com_wallpaper.jpg" />
+    <None Include="Resources\snapedit_1704179189869.png" />
+    <None Include="Resources\z5032222175711_b1964f9e19ec057a9a00a10d8f7de01b.jpg" />
+    <None Include="Resources\depositphotos_280382902-stock-video-digital-animation-high-score-arcade.jpg" />
+    <None Include="Resources\bckgr.jpg" />
+    <None Include="Resources\360_F_537172411_C4GmfD6cpU7mrra2CYzyYUL34w3Bk1mN.jpg" />
+    <None Include="Resources\a3a8aa8701157f18de638fb2b2a25ed3.jpg" />
+    <None Include="Resources\D&amp;D Dragon Lair.jpg" />
+    <None Include="Resources\303f2c41db5dc4d8d4c1ca739487e8b1.jpg" />
+    <None Include="Resources\68197.png" />
+    <None Include="Resources\bubbles-003-6397.wav" />
+    <None Include="Resources\deep-ocean-background-vector.jpg" />
+    <None Include="Resources\HD-wallpaper-underwater-world-ocean-corals-light.jpg" />
+    <None Include="Resources\kisspng-vector-graphics-trophy-award-portable-network-grap-target-pnt-giftsforsubs-5bfa0d5c287481.7884392115431140761657.jpg" />
+    <None Include="Resources\5148732.png" />
+    <None Include="Resources\LevelUp.bmp" />
+    <Content Include="Resources\me_game_gameover.wav" />
+    <None Include="Resources\z5020548391028_4e35a882ce04b707dc7221be5acbeeeb.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
